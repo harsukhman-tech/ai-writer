@@ -1,14 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI Writer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syntuxo AI</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+  }
+
+  header {
+    padding: 16px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background: #000;
+    border-bottom: 1px solid #222;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  .card {
+    background: #111;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  }
+
+  select, textarea, button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+  }
+
+  select, textarea {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: none;
+  }
+
+  button {
+    background: #6c4eff;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background: #593cff;
+  }
+
+  .output {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0e0e0e;
+    border-radius: 8px;
+    border: 1px solid #222;
+    white-space: pre-wrap;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-top: 40px;
+  }
+</style>
 </head>
+
 <body>
-  <h2>AI Writing Tool</h2>
 
-  <textarea placeholder="What do you want to write?"></textarea><br><br>
-  <button>Generate</button>
+<header>
+  SYNTUXO AI ✦ Smart Writing Assistant
+</header>
 
-  <p>AI output will appear here</p>
+<div class="container">
+  <div class="card">
+
+    <select id="mode">
+      <option>Instagram Caption</option>
+      <option>Ad Copy</option>
+      <option>Content Ideas</option>
+      <option>Customer Reply</option>
+    </select>
+
+    <textarea id="input" placeholder="Describe what you want..."></textarea>
+
+    <button onclick="generate()">Generate</button>
+
+    <div class="output" id="output">
+      AI output will appear here...
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2025 Syntuxo AI · Built with focus
+</footer>
+
+<script>
+  function generate() {
+    const input = document.getElementById("input").value;
+    const mode = document.getElementById("mode").value;
+
+    document.getElementById("output").innerText =
+      "Mode: " + mode + "\n\n" +
+      "AI Response (demo):\n" +
+      input;
+  }
+</script>
+
 </body>
 </html>
